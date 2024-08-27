@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="Login-Signup.css">
+        <link rel="icon" href="./assets/rain.svg">
+        <title>Weather-forecast</title>
+        <script src="index.js" defer></script>
+    </head>
+    <body id="Home">
+
+        <nav class="nav-bar">
+            <div class="icon-nav">
+                <img src="./assets//sunrise.svg" alt class="logo">
+                <span>AccuWeather</span>
+            </div>
+            <ul class="list-nav-bar active">
+                <li class="list-item"><a href="#Home">Home</a></li>
+                <li class="list-item"><a href="#AboutOurTeam">Our Team</a></li>
+                <li class="list-item"><a href="#" class="bgColor" id="loginButton">Login</a></li>
+                <li class="list-item"><a href="#" class="bgColor" id="signupButton">Signup</a></li>
+                <li class="list-item"><a href="#AboutOurTeam" class="profileBG"><img src="./assets/profileImage.png" alt></a></li>
+            </ul>
+            <div class="fas burger-menu" id="burger-menu">&#9776;</div>
+        </nav>
+
+        <div class="background-video-container">
+            <video autoplay muted loop id="background-video">
+                <source src="1110140-uhd_3840_2160_30fps.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        <!-- Login model page -->
+        <div id="loginModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeLoginModal()">&times;</span>
+                <div class="container">
+                    <h1 class="heading">Login</h1>
+                    <form class="formCase">
+                        <input class="input-box" type="email"
+                            placeholder="Enter your Email" required />
+                        <input class="input-box" type="password"
+                            placeholder="Enter your Password" required />
+                        <button class="button" type="submit">Login</button>
+                        <p class="p">Create an account? <a href="#" onclick="openSignupModal()">Sign Up</a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- SignUp Model page -->
+        <div id="signupModal" class="modal">
+            <div class="modal-content modal-content-signup">
+                <span class="close closeSignup"
+                    onclick="closeSignupModal()">&times;</span>
+                <div class="container">
+                    <h1 class="heading">SignUp</h1>
+                    <form class="formCase">
+                        <input class="input-box" type="text"
+                            placeholder="Enter your Full Name" required />
+                        <input class="input-box" type="email"
+                            placeholder="Enter your Email" required />
+                        <input class="input-box" type="password"
+                            placeholder="Enter your Password" required />
+                        <button class="button" type="submit">SignUp</button>
+                        <p class="p">Already have an account? <a href="#" onclick="openLoginModal()">Login</a></p>
+                        <div class="moreOptionToLogin">
+                            <button class="button" type="submit">Sign up with Google</button>
+                            <button class="button" type="submit">Sign up with Apple</button>            
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Home/Landing page here -->
+        <div class="main">
+
+            <div class="para">
+                <video autoplay muted loop id="background-video">
+                    <source src="/home/honey-ray/Downloads/weather-app-group4-main/1110140-uhd_3840_2160_30fps.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                
+                <h1>Weather Forecast</h1>
+                <p>Where every click brings you closer to meteorological mastery! Get ready to embark on a journey through weather wonders with our sleek interface. Instantly check current conditions and dive into detailed forecasts for any location worldwide.</p>
+    
+                <div class="Search">
+                    <input type="text" id="search-input" placeholder="Search by location name Ex: Bihar, Shimla" autocomplete="off">
+                    <button onclick="fetchWeather()">Get Weather</button>
+                </div>
+            </div>
+            <div id="search-results"></div>
+        </div>
+        
+        
+    
+
+        <!-- About Our Team Section -->
+        <div id="AboutOurTeam" class="about_main_box">
+            <div class="about__container">
+                <div class="about__textArea">
+                    <h1 class="about__mainHeading">"Our Team"</h1>
+                    <p class="about__mainPara"> Our team consists of six
+                        members: <span style="font-weight: bold;">Honey Ray, Nisha Yadav, Jaya Srivastava and Bibita Pal.</span> Together, we've
+                        developed a weather app project, showcasing weather
+                        data
+                        from various cities. Each team member
+                        contributed their input to this collectively created
+                        project.
+                    </p>
+
+                </div>
+
+                <!-- Our Team Cards -->
+                <div class="about__imageContainer">
+                    <div class="about__imageBox">
+
+                        <img
+                            src="./assets/avatarF.webp"
+                            alt="Team Member Image">
+                        <h3 class="about__innerHead">Honey</h3>
+                        <p class="about__innerPara">She's the one who made
+                            our
+                            <span style="font-weight: bold;">About
+                                Page.</span> It's awesome!</p>
+                    </div>
+                    <div class="about__imageBox">
+                        <img
+                            src="./assets/avatarF.webp"
+                            alt="Team Member Image">
+                        <h3 class="about__innerHead">Nisha</h3>
+                        <p class="about__innerPara">Her efficient touch
+                            shaped
+                            the <span style="font-weight: bold;">Login
+                                Page</span>, making it friendly and
+                            smooth</p>
+                    </div>
+                    <div class="about__imageBox">
+                        <img
+                            src="./assets/avatarF.webp"
+                            alt="Team Member Image">
+                        <h3 class="about__innerHead">Jaya</h3>
+                        <p class="about__innerPara">Her work on the <span
+                                style="font-weight: bold;">Footer
+                                Section</span>,
+                            is
+                            simply marvelous, adding the perfect
+                            finishing touch.</p>
+                    </div>
+                    <div class="about__imageBox">
+                        <img
+                            src="./assets/avatarF.webp"
+                            alt="Team Member Image">
+                        <h3 class="about__innerHead">Babita</h3>
+                        <p class="about__innerPara">He's skillfully overseen
+                            the
+                            functionality of the <span
+                                style="font-weight: bold;">search
+                                box,</span>
+                            ensuring it
+                            operates seamlessly.</p>
+                    </div>
+                
+                </div>
+            </div>
+
+        </div>
+        <!-- Footer section and About our project -->
+        <footer class="footer-area" id="AboutPage">
+            <div class="AboutSextion">
+                <div class="AboutSectionInformation">
+                    <h1>"About Our Project"</h1>
+                    <p>
+                        WeatherForecast+ is a comprehensive weather
+                        application designed to provide users with accurate
+                        and up-to-date weather information. With intuitive
+                        features and a user-friendly interface,
+                        WeatherForecast+ aims to be your go-to app for all
+                        weather-related needs.
+                    </p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/" target="_blank"
+                            title="facebook"><i
+                                class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/?lang=en"
+                            target="_blank" title="twitter" class="round"><i
+                                class="fa-brands fa-twitter"></i></a>
+                        <a href="https://in.linkedin.com/" target="_blank"
+                            title="linkedin"><i
+                                class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/" target="_blank"
+                            title="instagram"><i
+                                class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- Ocean part here -->
+            <div class="ocean">
+                <div class="wave">
+                    <div class="wave"></div>
+                </div>
+            </div>
+            <!-- Copy write part here -->
+            <div class="copy">
+                <p>&copy;2024 AccuWeather, This design is created by Honey Ray,
+                    Babita Pal, Nisha Yadav, Jaya Srivastava
+                </p>
+                <p><i>Team Work</i></p>
+            </div>
+        </footer>
+
+    </body>
+</html>
